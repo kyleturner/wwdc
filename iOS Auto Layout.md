@@ -1,3 +1,4 @@
+gs
 iOS Auto Layout
 =========
 
@@ -55,16 +56,19 @@ Phases of Display
 
 With defined constraints, you may need to "poke" the system and inform it that it needs to update the display.  For example, maybe a subview (such as a badge) is added to the view, and things need to be rearranged proportionally.  The three steps that take place, in order, are the following:
 
-# Update Constraints - bottom up
+* Update Constraints - bottom up
+
 ```-setNeedsUpdateConstraints```
 
-# Layout - top down
+* Layout - top down
+
 ```-setNeedsLayout```
 
-# Display - top down
+* Display - top down
+
 ```-setNeedsDisplay```
 
-But what about constraining a button size, for example?  What if you want a button to be a particular size?
+**But what about constraining a button size, for example?  What if you want a button to be a particular size?**
 
 ```intrinsicContentSize``` - returns actual sizes of views, can get information about the element of interest
 
