@@ -22,6 +22,8 @@ Developer Tools Kickoff
 XCode Enhancements!
 -----
 
+*General*
+
 * Prioritizes code completion results!
 * Refactor > Convert to Modern Syntax
 * Search & Replace using regex or *simple pattern searches*, to insert a token that matches any pattern of characters (semi-colons, line breaks, etc)
@@ -42,7 +44,7 @@ XCode Enhancements!
 
 *Optimization*
 
-* LLVM Compiler 4 - increased language support, C++
+* LLVM Compiler 4 - increased language support, C++, among others
 * **Compiler/Static Analyzer** improvements via Build and Analyze
 * New analyzer checks - GCD, Security, others.  Can enable/disable whatever checks make most sense (in Pojrect settngs))
 
@@ -51,5 +53,4 @@ XCode Enhancements!
 *Hardware watchpoints* when debugging - can watch a particular object 
 
 
-*Instruments*
-
+*New Application Tools*
