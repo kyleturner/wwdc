@@ -69,7 +69,10 @@ With defined constraints, you may need to "poke" the system and inform it that i
 Things That Can Go Wrong
 -----
 
-Interface Builder is trying to help prevent you from things going wrong when laying out your view.  Typically, you will see weirdness when defining constraints/layouts in code.  Woudln't it be nice to define these as a picture in code?  Check this out:
+*Interface Builder is trying to help prevent you from things going wrong when laying out your view.  Typically, you will see weirdness when defining constraints/layouts in code.  Woudln't it be nice to define these as a picture in code?  Check this out:*
+
+Representing Your Layouts in Code (aka Awesome)
+----
 
 ```[NSLayoutConstraint constraintsWithVisualFormat: @"[cancelButton]-[acceptButton]" options:0 metrics:nil views:viewsDictionary];```
 
@@ -78,3 +81,5 @@ Use ```NSDictionaryOfVariableBindings``` if views are defined as properties.  Aw
 What if you want to define specific sizes of the buttons?
 
 ```[NSLayoutConstraint constraintsWithVisualFormat: @"[cancelButton(50)]-[acceptButton(50)]" options:0 metrics:nil views:viewsDictionary];```
+
+Use ```_autolayoutTrace``` in the debugger to see the defined layouts for your view hierarchy
