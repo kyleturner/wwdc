@@ -1,7 +1,6 @@
 iOS Auto Layout
 =========
 
-
 * Constraint-based descriptive layout system.  What's that mean?
     * For example: Centered horizontally in its superview
     * Fixed distance from the bottom, as linear equations!
@@ -82,4 +81,12 @@ What if you want to define specific sizes of the buttons?
 
 ```[NSLayoutConstraint constraintsWithVisualFormat: @"[cancelButton(50)]-[acceptButton(50)]" options:0 metrics:nil views:viewsDictionary];```
 
-Use ```_autolayoutTrace``` in the debugger to see the defined layouts for your view hierarchy
+Use ```_autolayoutTrace``` in the debugger to see the defined layouts for your view hierarchy.
+
+
+Compatibility
+-----
+
+I'm ready to conver to auto-layout, but how do I begin?  You can configure to use auto-layout in all, or just certain parts of your application.
+
+Use ```translatesAutoresizingMaskIntoConstraints``` == NO to make your constrained views not conflict with non-constrained views.  IB will handle this for you, so this would only be for using in code.
