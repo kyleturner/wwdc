@@ -32,4 +32,3 @@ HTTP APIs
 **HTTP Pipelining**
 
 ```[NSMutableURLRequest setHTTPShouldUsePipelining:]```
-

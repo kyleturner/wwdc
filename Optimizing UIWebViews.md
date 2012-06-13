@@ -34,3 +34,29 @@ Keep in mind when trying to determine (say the height) of the current layout on 
 Layers in WebKit Rendering
 -----
 
+Does your page flicker?  Does your app run out of memory showing web content?  Blindly adding a 3D transform style?
+
+**HTML Rendering 101**
+
+What is it? *Taking textual HTML/CSS and converting it to painting and drawing commands to produce an image that we can display on screen.*
+
+WebKit creates a ```RenderTree``` from the initial DOM Tree to enhance rendering and painting of elements on the page.  You can ask each individual piece of the page to render themselves (styles, positions, etc).  Don't want to paint the entire page all the time.  What if you are running a video?  WebKit cuts out a portion of the screen and hands it to the video renderer, so the page is not responsible for "refreshing" or updating the page/video.
+
+**Compositing** is flattening layered assets into one, to enhance performance of page loading.
+
+*Why are layers created?* 
+
+* Always one tiled layer for main page
+* Painting intensive elements (```video```, ```canvas```)
+* 3D Transofmrations (```translate3d```, ```rotate3d```, ```translateZ```)
+* Content enhancements (filters, masks, reflections, opacity, transitions, animations)
+* Special cases (```position:fixed```, touch scrolling)
+* Any content that overlaps an existing layer
+
+**Tools**
+
+* Web inspector
+* Instruments
+* WebKit debug tools
+    * ```WebKitShowDebugBorders``` can be set in ```NSUserDefaults``` to see the borders around particular layers
+    * ```WebKitDeveloperExtras``` ?
