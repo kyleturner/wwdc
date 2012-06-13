@@ -34,11 +34,11 @@ Keep in mind when trying to determine (say the height) of the current layout on 
 Layers in WebKit Rendering
 -----
 
-Does your page flicker?  Does your app run out of memory showing web content?  Blindly adding a 3D transform style?
+*Does your page flicker?  Does your app run out of memory showing web content?  Blindly adding a 3D transform style?*
 
 **HTML Rendering 101**
 
-What is it? *Taking textual HTML/CSS and converting it to painting and drawing commands to produce an image that we can display on screen.*
+What is it? ***Taking textual HTML/CSS and converting it to painting and drawing commands to produce an image that we can display on screen.***
 
 WebKit creates a ```RenderTree``` from the initial DOM Tree to enhance rendering and painting of elements on the page.  You can ask each individual piece of the page to render themselves (styles, positions, etc).  Don't want to paint the entire page all the time.  What if you are running a video?  WebKit cuts out a portion of the screen and hands it to the video renderer, so the page is not responsible for "refreshing" or updating the page/video.
 
@@ -60,3 +60,25 @@ WebKit creates a ```RenderTree``` from the initial DOM Tree to enhance rendering
 * WebKit debug tools
     * ```WebKitShowDebugBorders``` can be set in ```NSUserDefaults``` to see the borders around particular layers
     * ```WebKitDeveloperExtras``` ?
+    
+
+
+Rendering in Your App
+-----
+
+Asynchronous rendering, incremental rendering in WebKit
+
+Create a rendering thread to free the main thread and allow user touch events/not block the application.
+
+**Incremental Rendering**
+
+* Loading *chunks* of the page, to show the user portions of the application as content is being loaded
+* ```supressesIncrementalRendering```
+
+**The Smart App Banner**
+
+When user visits website, a new banner slides in with icon, link to app store, rating, cost, etc.  If the app is already installed on users device, the ```view``` button turns into an ```open``` button to jump the user to the app, potentially passing along info to the app.
+
+*How?  Just add a **meta tag.***
+
+```<meta name="apple-itunes-app" content-app-id=123, app-argument=x-sfp:///visit/real-rock />```
